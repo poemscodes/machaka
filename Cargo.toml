@@ -1,0 +1,25 @@
+[package]
+name = "machaka"
+version = "0.1.0"
+edition = "2021"
+authors = ["Wave Mandala <wm@poems.codes>"]
+description = "plist transcoder to json"
+documentation = "https://docs.rs/plistt"
+readme = "README.md"
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.3.1", features = ["env", "derive", "cargo", "wrap_help"] }
+plist = "1.4.3"
+plistt = "0.1.0"
+seek_bufread = "1.2.2"
+serde = { version = "1.0.163", features = ["derive", "rc", "alloc"] }
+serde_json = { version = "1.0.96", features = ["alloc", "raw_value", "unbounded_depth", "preserve_order"] }
+xq = "0.2.44"
+
+[[bin]]
+name = "machaka"
+path = "src/cli.rs"
+bench = false
